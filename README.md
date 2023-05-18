@@ -1,11 +1,5 @@
 # ExamDotNetBeauty2023
  Note 15/20
-• Ajouteret insérer des éléments dans une collection
-• Supprimerdes éléments d'une collection
-• Recherche, tri, recherche d'articles
-• Remplacementd'éléments
-• Copier et cloner des collections et des éléments
-• Propriétés Capacité et Nombre pour trouver la capacité de la collection et le nombre d'éléments dans la TAREK collection AYARI 2
 -------------------------------------class----------------------------------------
     public enum PlaneType
     {
