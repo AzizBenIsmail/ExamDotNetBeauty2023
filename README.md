@@ -284,7 +284,7 @@ on Va Cree IFlightService comme interface des fonction dans FlightService et her
 	orderby perso.Nom ascending
 	select new { Name = perso.Nom, Number = perso.Num};
 
-## oFirst(): 
+## First(): 
 Renvoie le premier élément d'une collection ou le premier élément qui
 satisfait une condition.
 
@@ -318,16 +318,24 @@ Pour indiquer le nombre d’ élément a ignorer de la sélection.
 
 Pour indiquer le nombre d’ élément a garder de la sélection.
 
-o Average(): calcule la moyenne des éléments numériques de la collection.
+## Average(): 
 
-o Sum() : calcule la somme des éléments numériques de la collection.
+calcule la moyenne des éléments numériques de la collection.
 
-o Max(): renvoie le plus grand élément numérique d'une collection.
+## Sum() : 
 
-o Count: renvoie le nombre d'éléments de la collection ou le nombre d'éléments
+calcule la somme des éléments numériques de la collection.
+
+## Max(): 
+
+renvoie le plus grand élément numérique d'une collection.
+
+## Count: 
+
+renvoie le nombre d'éléments de la collection ou le nombre d'éléments
 qui ont satisfait à la condition donnée.
 
--------------------------Les méthodes anonymes
+# Les méthodes anonymes
         public void ShowFlightDetails(Plane plane)
         {
             var result = from f in Flights
@@ -339,7 +347,7 @@ qui ont satisfait à la condition donnée.
                     "date :" + item.FlightDate);
             }
         }
----------------------------------------------------------------------------
+## 
     internal class ReservationConfig : IEntityTypeConfiguration<Reservation>
     {
         public void Configure(EntityTypeBuilder<Reservation> builder)
@@ -356,20 +364,21 @@ qui ont satisfait à la condition donnée.
         }
 
     }
----------------------------------------------------------------------------
-Add-Migration
-Update-Database 
---------------------------------Configuration------------------------------------------
-    internal class PlaneConfig : IEntityTypeConfiguration<Plane>
-    {
-        public void Configure(EntityTypeBuilder<Plane> builder)
-        {
-            builder.ToTable("MyPlanes"); //modifcation du nom
-            builder.Property(p => p.Capacity).HasColumnName("PlaneCapacity");
-            builder.HasKey(p=>p.PlaneId); // fixsage du cle primere
-        }
-    }
---------------------------------Relation--------------------------------
+# Migration de base de donne
+	Add-Migration
+	Update-Database 
+# Configuration
+	
+    	Public class PlaneConfig : IEntityTypeConfiguration<Plane>
+    	{
+	        public void Configure(EntityTypeBuilder<Plane> builder)
+	        {
+	            builder.ToTable("MyPlanes"); //modifcation du nom
+	            builder.Property(p => p.Capacity).HasColumnName("PlaneCapacity");
+	            builder.HasKey(p=>p.PlaneId); // fixsage du cle primere
+        	}
+	    }
+# Relation
             //builder
             //    .HasMany(f => f.passengers)
             //    .WithMany(p => p.Flights)
