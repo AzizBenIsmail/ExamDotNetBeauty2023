@@ -184,14 +184,14 @@ Configurer l’héritage schématisé dans le diagramme de classe de façon à c
 entités seront mappées à
 IsTraveller : 
 => fil FlightConfig
-###Exp 1	
+### Exp 1	
 	
 	modelBuilder.Entiy<Membre>()
 	.HasDiscriminator<string>("Type")
 	.HasValue<Entraineur>("e")
 	.HasValue<Joueur>("j")
 	.HasValue<Membre>("m");
-###Exp 2
+### Exp 2
 	
             builder.HasDiscriminator<int>("isTraveler")
                 .HasValue<Passenger>(0)
