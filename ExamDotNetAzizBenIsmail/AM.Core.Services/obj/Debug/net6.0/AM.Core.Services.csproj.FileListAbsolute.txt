@@ -1,0 +1,17 @@
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\AM.Core.Services\bin\Debug\net6.0\AM.Core.Services.deps.json
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\AM.Core.Services\bin\Debug\net6.0\AM.Core.Services.dll
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\AM.Core.Services\bin\Debug\net6.0\AM.Core.Services.pdb
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\AM.Core.Services\bin\Debug\net6.0\AM.Core.Domain.dll
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\AM.Core.Services\bin\Debug\net6.0\AM.Core.Domain.pdb
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\AM.Core.Services\obj\Debug\net6.0\AM.Core.Services.csproj.AssemblyReference.cache
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\AM.Core.Services\obj\Debug\net6.0\AM.Core.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\AM.Core.Services\obj\Debug\net6.0\AM.Core.Services.AssemblyInfoInputs.cache
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\AM.Core.Services\obj\Debug\net6.0\AM.Core.Services.AssemblyInfo.cs
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\AM.Core.Services\obj\Debug\net6.0\AM.Core.Services.csproj.CoreCompileInputs.cache
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\AM.Core.Services\obj\Debug\net6.0\AM.Core.Services.csproj.CopyComplete
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\AM.Core.Services\obj\Debug\net6.0\AM.Core.Services.dll
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\AM.Core.Services\obj\Debug\net6.0\refint\AM.Core.Services.dll
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\AM.Core.Services\obj\Debug\net6.0\AM.Core.Services.pdb
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\AM.Core.Services\obj\Debug\net6.0\ref\AM.Core.Services.dll
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\AM.Core.Services\bin\Debug\net6.0\AM.Core.Interfaces.dll
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\AM.Core.Services\bin\Debug\net6.0\AM.Core.Interfaces.pdb

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<ExamDotNetAzizBenIsmail.Flight>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<fieldset>
+    <legend>Search By:</legend>
+    <form asp-action="index">
+        <label>Departure Date</label>
+        <input type="text" name="filter" />
+        <input type="submit" value="Search" />
+    </form>
+</fieldset>
+<form asp-action="SortFlight">
+    <input type="submit" value="sort" />
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstimatedDuration)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <img src="~/upload/@item.Image" width="50" height="50"/>
+          
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstimatedDuration)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "Edit", new {  id=item.FlightId  }) |
+
+                    @Html.ActionLink("Details", "Details", new {  id=item.FlightId  }) |
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.FlightId  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

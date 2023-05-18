@@ -1,0 +1,12 @@
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\ExamDotNetAzizBenIsmail\bin\Debug\net6.0\AM.Core.Domain.deps.json
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\ExamDotNetAzizBenIsmail\bin\Debug\net6.0\AM.Core.Domain.dll
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\ExamDotNetAzizBenIsmail\bin\Debug\net6.0\AM.Core.Domain.pdb
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\ExamDotNetAzizBenIsmail\obj\Debug\net6.0\AM.Core.Domain.csproj.AssemblyReference.cache
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\ExamDotNetAzizBenIsmail\obj\Debug\net6.0\AM.Core.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\ExamDotNetAzizBenIsmail\obj\Debug\net6.0\AM.Core.Domain.AssemblyInfoInputs.cache
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\ExamDotNetAzizBenIsmail\obj\Debug\net6.0\AM.Core.Domain.AssemblyInfo.cs
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\ExamDotNetAzizBenIsmail\obj\Debug\net6.0\AM.Core.Domain.csproj.CoreCompileInputs.cache
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\ExamDotNetAzizBenIsmail\obj\Debug\net6.0\AM.Core.Domain.dll
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\ExamDotNetAzizBenIsmail\obj\Debug\net6.0\refint\AM.Core.Domain.dll
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\ExamDotNetAzizBenIsmail\obj\Debug\net6.0\AM.Core.Domain.pdb
+C:\Users\aziz2\OneDrive\Bureau\.net\ExamDotNetAzizBenIsmail\ExamDotNetAzizBenIsmail\obj\Debug\net6.0\ref\AM.Core.Domain.dll

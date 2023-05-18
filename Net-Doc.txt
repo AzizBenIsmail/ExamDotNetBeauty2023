@@ -1,0 +1,142 @@
+1 n3aby Domaine b les classe w si famma classe numeration
+2 les relation simple kima lexempel 
+3 les annotation lkol 
+4 fil config ngedo classe ili de5la b3atha 
+4 n3aytoulhom fil class DBContext
+4 si fama tostring wala haja haka 
+5 add-migration databaseExam 
+6 update-Database
+
+si Types d’entité détenus toul emchy ll project PassengerConfig
+-----------------------------------------DOMAIN------------------------
+ public string Nom { get; set; }
+Many to Many *->*: public virtual ICollection<Postulant> Postulants { get; set; }
+One to Many (Many to One) * -> 1 :  public virtual Entreprise Entreprise { get; set; }
+
+-------------------------------------FLUENT API-------------------------
+*TABLE D'ASSOCIATION:
+ public void Configure(EntityTypeBuilder<Postulant> builder)
+        {
+            //Many to Many
+            builder.HasMany(p => p.Offres)
+            .WithMany(v => v.Postulants)
+            .UsingEntity(
+                j => j.ToTable("Candidature"));//Table d'association
+
+        }
+
+(on ajoute ce bout de code dans context.cs apres la creation  de la table d'association)
+new PostulantConfiguration().Configure(modelBuilder.Entity<Postulant>());
+
+
+*CLASSE PORTEUSE DE DONNEES:
+class PretLivreConfiguration : IEntityTypeConfiguration<PretLivre>
+    {
+        public void Configure(EntityTypeBuilder<PretLivre> builder)
+        {
+            builder.HasKey(e => new { e.LivreFK, e.AbonneFK, e.DateDebut });
+
+            builder.HasOne(e => e.Livre).WithMany(e => e.PretLivres).HasForeignKey(e => e.LivreFK).OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(e => e.Abonne).WithMany(e => e.PretLivres).HasForeignKey(e => e.AbonneFK);
+        }
+    }
+
+*CONVENTION PERSONALISEE: (context.cs)
+//Configurer toute propriété qui commence par Id comme clé primaire.
+            foreach (var property in modelBuilder.Model.GetEntityTypes()
+                        .SelectMany(t => t.GetProperties())
+                        .Where(p => p.ClrType == typeof(int) && p.Name.StartsWith("Id")))
+            {
+                property.Key();
+            } 
+
+--------------------------BASE DE DONNEES-------------------
+context.cs: public DbSet<Categorie> Categories { get; set; }   //lkol table
+1- outils-> NuGet->Console du gestionnaire (changement du projet source si erreur)
+2- Add-Migration nom 
+3-update-database
+
+
+
+----------------------------------------SERVICES-----------------------
+*SERVICE: public class OffreService : Service<Offre>, IOffreService
+          public OffreService(IUnitOfWork utwk) : base(utwk){}
+*INTERFACE:  public   interface IOffreService:IService<Offre>
+
+
+
+
+---------------------------MVC-----------------------
+*CREER UNE VUE:
+-Ajouter un controller:(dossier controllers->ajouter controller lecture/ecriture)
+-Dans le fichier du controller:
+  IOffreService offreService;
+  public OffreController(IOffreService os, IServiceEntreprise es)
+        {
+            offreService = os;
+            entrepriseService= es;
+        }
+-// POST: OfffreController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Offre o)
+          try
+            {
+               *** offreService.Add(o);
+               *** offreService.Commit();
+                return RedirectToAction(nameof(Index));
+            }
+
+*FABRIQUER LA VUE:
+clique droit sur le mot create->ajouter un vue->vue razor
+
+-Injection de dépandances(startup.cs):
+services.AddScoped<IOffreService, OffreService>()
+                   .AddScoped<IServiceEntreprise, ServiceEntreprise>()
+                   .AddScoped<IUnitOfWork, UnitOfWork>()
+                   .AddScoped<IDataBaseFactory, DataBaseFactory>();
+
+*Liste déoulante:
+--Controller--:
+ViewBag.Entreprise = new SelectList(entreprises, "IdEntreprise", "NomEntreprise");
+--create.cshtml--:
+<div class="form-group">
+                <label asp-for="EntrepriseFK" class="control-label"></label>
+                <select asp-for="EntrepriseFK" class="form-control" asp-items="ViewBag.Entreprise"></select>
+            </div>
+
+*VUE INDEX:
+--Controller--: nzidou hedhi fel public action result
+var list = offreService.GetMany();
+
+clique droit sur le mot index->ajouter un vue->vue razor
+-ICI ON AJOUTE AUSSI UN EBARRE DE RECHERCHE
+  public ActionResult Index()
+        {
+            return View(offreService.GetMany());
+        }
+ [HttpPost]
+        public ActionResult Index(string filtre)
+        {
+            var list = offreService.GetMany();
+            if (!String.IsNullOrEmpty(filtre))
+            {
+                list = list.Where(m => m.Entreprise.AdresseEntreprise.Ville.ToString().Equals(filtre)).ToList();
+            }
+            return View(list);
+        }
+
+--Index.cshtml--:9bal create new
+
+<h1>Liste des offres</h1>
+<fieldset>
+    <legend></legend>
+    <form asp-action="index">
+        <label for="filtre">Recherche par ville:</label>
+        <input type="text" name="filtre" />
+        <input type="submit" value="Search" />
+    </form>
+</fieldset>
+ <th>
+                @Html.DisplayNameFor(model => model.Entreprise.AdresseEntreprise.Ville)
+            </th>
