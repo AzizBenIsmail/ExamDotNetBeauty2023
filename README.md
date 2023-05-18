@@ -1,6 +1,6 @@
 # ExamDotNetBeauty2023
  Note 15/20
--------------------------------------class----------------------------------------
+# class
     public enum PlaneType
     {
         BOING=1,AIRBUS=2
@@ -10,7 +10,7 @@ public class Flight
     { prop ...
 public string Nom { get; set; }
 	}
---------------------------------------ANNOTATIONS-----------------------
+# ANNOTATIONS
 -Obligatoire: [Required]
 -obligatoire avec message d'erreur:  [Required(ErrorMessage ="Champs obligatoire")]
 
