@@ -1,5 +1,4 @@
 # ExamDotNetBeauty2023
- Note 15/20
 # class
     public enum PlaneType
     {
